@@ -1220,12 +1220,16 @@ class MyApp(App):
 from textual.widgets import Tree
 
 class MyApp(App):
-    def compose(self) -> ComposeResult:
+    def compose(self):
         tree = Tree("根节点")
-        tree.root.add_leaf("叶节点 1")
-        branch = tree.root.add_branch("分支 1")
-        branch.add_leaf("子叶节点 1")
-        branch.add_leaf("子叶节点 2")
+        # 全部改用 .add() 方法
+        tree.root.add("子叶节点1")
+        tree.root.add("子叶节点4")
+        # 拿到分支节点，它同样是用 add 创建的
+        branch = tree.root.add("分支1")
+        # 在分支下面继续 add 子节点
+        branch.add("子叶节点2")
+        branch.add("子叶节点3")
         yield tree
 ```
 
