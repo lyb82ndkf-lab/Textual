@@ -1200,15 +1200,18 @@ class MyApp(App):
         yield DataTable(id="table")
 
     def on_mount(self) -> None:
-        table = self.query_one("#table", DataTable)
-        table.add_columns("姓名", "年龄", "城市", "职业")
-        table.add_rows([
-            ("张三", 28, "北京", "工程师"),
-            ("李四", 35, "上海", "设计师"),
-            ("王五", 24, "深圳", "产品经理"),
-            ("赵六", 31, "杭州", "数据分析师"),
+        # 寻找表格
+        self.table = self.query_one("#table", DataTable)
+        # 定义表头
+        self.table.add_columns("姓名", "年龄", "城市", "职业")
+        # 填充数据
+        self.table.add_rows([
+            ("张三", 25, "北京", "前端开发"),
+            ("李四", 30, "上海", "后端开发"),
+            ("王五", 28, "广州", "数据分析师"),
+            ("赵六", 32, "深圳", "数据工程师"),
         ])
-        table.cursor_type = "row"  # 行选择模式
+        self.table.cursor_type = "row"  # 行选择模式
 ```
 
 ## 4.6 Tree / DirectoryTree 树形结构
