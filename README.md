@@ -1,6 +1,6 @@
 # Textual TUI 开发完全教程 —— 从零开始构建 Agent 终端界面
 
-> 📖 本教程基于 Textual 官方文档（https://textual.textualize.io/）整理，覆盖从入门到高级的全部知识点。  
+> 📖 本教程基于 Textual 官方文档（ https://textual.textualize.io/ ）整理，覆盖从入门到高级的全部知识点。  
 > 🎯 最终目标：用 Python + Textual 构建一个功能完整、界面美观的 **AI Agent TUI 界面**。
 
 ---
